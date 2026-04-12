@@ -6,7 +6,7 @@ namespace Foster.Framework;
 
 public sealed class Window : IDrawableTarget
 {
-	internal nint Handle { get; private set; }
+	public nint Handle { get; private set; }
 	internal readonly uint ID;
 
 	private string title;
@@ -387,7 +387,7 @@ public sealed class Window : IDrawableTarget
 	/// </summary>
 	public void SetMousePosition(Vector2 position)
 	{
-		SDL_WarpMouseInWindow(Handle, 
+		SDL_WarpMouseInWindow(Handle,
 			position.X * (Width / (float)WidthInPixels),
 			position.Y * (Height / (float)HeightInPixels)
 		);
@@ -448,7 +448,7 @@ public sealed class Window : IDrawableTarget
 			app.RunOnMainThread(StopTextInput);
 		}
 	}
-	
+
 	/// <summary>
 	/// Brings focus to the Window
 	/// </summary>
